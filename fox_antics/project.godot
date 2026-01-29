@@ -31,6 +31,7 @@ folder_colors={
 "res://Globals/": "blue",
 "res://Resources/": "green",
 "res://Scenes/": "purple",
+"res://Scenes/Player/": "yellow",
 "res://addons/": "gray",
 "res://addons/_Godot-IDE_/plugins": "blue",
 "res://addons/_Godot-IDE_/shared_resources/": "teal",
