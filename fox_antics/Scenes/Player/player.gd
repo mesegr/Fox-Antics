@@ -27,6 +27,7 @@ func player_movement(delta: float) -> void:
 		velocity.y = JUMP_SPEED
 		
 	velocity.x = RUN_SPEED * Input.get_axis("left","right")
-	player_sprite.flip_h = true if velocity.x < 0 else false
+	if is_equal_approx(velocity.x, 0.0) == false:
+		player_sprite.flip_h = velocity.x < 0 
 	
 	move_and_slide()
