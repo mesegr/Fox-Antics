@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Fox_Antics"
+run/main_scene="uid://dl48e1g7r4nuk"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -27,8 +28,20 @@ enabled=PackedStringArray("res://addons/_Godot-IDE_/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Globals/": "blue",
+"res://Resources/": "green",
+"res://Scenes/": "purple",
+"res://addons/": "gray",
 "res://addons/_Godot-IDE_/plugins": "blue",
-"res://addons/_Godot-IDE_/shared_resources/": "teal"
+"res://addons/_Godot-IDE_/shared_resources/": "teal",
+"res://assets/": "red",
+"res://assets/backgrounds/": "yellow",
+"res://assets/danger/": "yellow",
+"res://assets/enemies/": "yellow",
+"res://assets/player/": "yellow",
+"res://assets/tiles/": "teal",
+"res://assets/ui/": "yellow",
+"res://classes/": "orange"
 }
 
 [input]
@@ -64,11 +77,16 @@ reload={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Platform"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
