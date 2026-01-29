@@ -4,6 +4,8 @@ extends CharacterBody2D
 class_name Player
 
 const GRAVITY: float = 690
+const JUMP_SPEED: float = -270
+const RUN_SPEED: float = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +14,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	player_movement(delta)
+
+func player_movement(delta: float) -> void:
 	velocity.y += GRAVITY * delta
+	
+	if is_on_floor() and Input.is_action_just_pressed("Jump"):
+		velocity.y = JUMP_SPEED
+		
+	velocity.x = RUN_SPEED * Input.get_axis("left","right")
+	
 	move_and_slide()
