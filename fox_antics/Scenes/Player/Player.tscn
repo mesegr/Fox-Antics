@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://budj1mh37gcie" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://yug70cwi1tbj" path="res://assets/player/player.png" id="1_s0eop"]
+[ext_resource type="PackedScene" uid="uid://cg22x0y6u8cm4" path="res://Scenes/Player/PlayerCamera.tscn" id="3_h54ih"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft8w5"]
 radius = 6.0
@@ -11,18 +12,17 @@ height = 20.0
 collision_layer = 0
 script = ExtResource("1_ft8w5")
 
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=866261240]
-zoom = Vector2(3, 3)
-limit_smoothed = true
-
 [node name="DebugLabel" type="Label" parent="." unique_id=511240779]
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1493621761]
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1493621761]
 texture = ExtResource("1_s0eop")
 hframes = 19
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=764739462]
+[node name="PlayerPhysicsCollision" type="CollisionShape2D" parent="." unique_id=764739462]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_ft8w5")
+
+[node name="PlayerCamera" parent="." unique_id=598131620 instance=ExtResource("3_h54ih")]
+position = Vector2(0, 6)

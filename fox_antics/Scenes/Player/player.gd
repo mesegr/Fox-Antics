@@ -3,6 +3,10 @@ extends CharacterBody2D
 
 class_name Player
 
+
+@onready var player_sprite: Sprite2D = $PlayerSprite
+
+
 const GRAVITY: float = 690
 const JUMP_SPEED: float = -270
 const RUN_SPEED: float = 200
@@ -23,5 +27,6 @@ func player_movement(delta: float) -> void:
 		velocity.y = JUMP_SPEED
 		
 	velocity.x = RUN_SPEED * Input.get_axis("left","right")
+	player_sprite.flip_h = true if velocity.x < 0 else false
 	
 	move_and_slide()
